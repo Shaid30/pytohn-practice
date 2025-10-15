@@ -1,5 +1,5 @@
 class Student:
-    def __init__(self,name,marks):
+    def __init__(self,name,marks): #constructor method
         self.name = name
         self.marks = marks
         print("new database")
@@ -8,7 +8,7 @@ s1 = Student("arjun",89)
 print(s1.name,s1.marks)
 
 
-
+#practice Qs
 class Account:
     def __init__(self,bal,acc):
         self.balance = bal
@@ -30,8 +30,10 @@ acc1.credit(2000)
 
 
 
-
+#single inheritance
 class Car:
+    def __init__(self,type):
+        self.type = type
     @staticmethod
     def start():
         print("car started")
@@ -40,13 +42,30 @@ class Car:
         print("car stopped")
 class Toyotocar(Car):
     def __init__(self,name):
+        super().__init__(type) #using super method
         self.name = name
+        super().start() #super method
 
 car1 = Toyotocar("fortuner")
 car2 = Toyotocar("MERCEDEZ")
 print(car1.stop())
 
 
-print("hello world")
+#multiple inheritance
+class A:
+    varA = "welcome to class A"
+
+class B:
+    varB = "welcome to class B"
+class C(A,B):
+    varC = "welcome to class C"
+
+c1 = C()
+print(c1.varC)
+print(c1.varB)
+print(c1.varA)
+
+
 
         
+
