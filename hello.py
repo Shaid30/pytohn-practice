@@ -67,5 +67,48 @@ print(c1.varA)
 
 
 
-        
 
+class Student:
+    def __init__(self,phy,chem,math):
+        self.phy = phy
+        self.chem = chem 
+        self.math = math
+
+    @property         #property method
+    def percentage(self):
+        return str((self.phy+self.chem+self.math)/3) + "%"
+
+stu1 =Student(98,65,64)
+print(stu1.percentage)
+
+stu1.phy=78
+print(stu1.percentage)
+
+#polymorphism and dunder function
+class Complex:
+    def __init__(self,real,img):
+        self.real = real
+        self.img = img
+    def showNumber(self):
+        print(self.real,"i +",self.img, "j")
+    def __add__(self, num2):
+        newReal =self.real+num2.real
+        newImg = self.img +num2.img
+        return Complex(newReal, newImg)
+num1 =Complex(1,3)
+num1.showNumber()
+
+num2 =Complex(4,6)
+num2.showNumber()
+
+#practice QS 
+class Circle:
+    def __init__(self,radius):
+        self.radius = radius
+    def area(self):
+        return 3.14 *self.radius**2
+    def perimeter(self):
+        return 2 * 3.14 * self.radius
+c1 =Circle(22)
+print (c1.area())
+print (c1.perimeter())
