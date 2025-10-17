@@ -112,3 +112,68 @@ class Circle:
 c1 =Circle(22)
 print (c1.area())
 print (c1.perimeter())
+
+
+#QS 2
+class Employee:
+    def __init__(self,role,dept,salary):
+        self.role = role
+        self.dept = dept
+        self.salary = salary
+    def showDetails(self):
+        print("role=", self.role)
+        print("dept=",self.dept)
+        print("salary=",self.salary)
+class Engineer(Employee):
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+        super ().__init__("Engineer", "IT","60,000")
+
+engg1 = Engineer("Elon Musk", "40")
+engg1.showDetails()
+
+#QS 3
+class Order:
+    def __init__(self,item,price):
+        self.item = item
+        self.price = price
+    def __gt__(self,odr2): #using dunder function
+        return self.price > odr2.price
+
+
+odr1 = Order("chips","20")
+odr2 = Order("tea", "15")
+print(odr1>odr2)
+
+#Guess the number concept
+import random
+
+target = random.randint(1, 100)
+while True:
+    UserChoice = input("Guess the target or Quit: ")
+    if(UserChoice == "Quit"):
+        break
+    UserChoice = int(UserChoice)
+    if(UserChoice== target):
+        print("Sucess:Correct Guess!!")
+        break
+    elif(UserChoice<target):
+        print("your number is too small. take a bigger guess")
+    else:
+        print("your number is too big. take a smaller guess")
+
+print("........GAME OVER.......") 
+
+#RANDOM PASSWORD GENERATOR
+import random
+import string
+
+pass_len =12
+charValues = string.ascii_letters+ string.digits+string.punctuation
+
+password = " "
+for i in range(pass_len):
+    password +=random.choice(charValues)
+
+print ("your random passwor is :", password)
