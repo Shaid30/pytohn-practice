@@ -177,3 +177,9 @@ for i in range(pass_len):
     password +=random.choice(charValues)
 
 print ("your random passwor is :", password)
+
+#number pattern
+for i in range(6):
+    for j in range(1,i+1):
+        print(j,end="")
+        print("")
